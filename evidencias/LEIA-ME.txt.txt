@@ -1,0 +1,6 @@
+Evidências do Projeto de Testes Mobile:
+
+- Build concluído com sucesso no Android Studio
+- Testes executados em dispositivo físico Samsung Galaxy A11
+- Código completo enviado ao repositório GitHub
+- Log de execução e confirmação de envio disponível no histórico do terminal

@@ -29,7 +29,7 @@ Automação de testes end-to-end para um aplicativo Android construído com **Je
 | **Kotlin** | Linguagem de desenvolvimento |
 | **Jetpack Compose** | Framework de UI declarativa do Android |
 | **Espresso** | Framework de testes de UI para Android |
-| **Robot Pattern** | Padrão de organização dos testes |
+| **Robot Pattern** | Padrão de organização dos testess |
 
 ## 🧪 Fluxos Testados
 

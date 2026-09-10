@@ -1,86 +1,76 @@
-# QA Test App — Testes de UI Automatizados com Espresso + Jetpack Compose
+# 📱 Automação de Testes Android — Espresso & Jetpack Compose
 
-Projeto de automação de testes de UI para Android, desenvolvido como desafio prático da **DIO (Digital Innovation One)**, aplicando boas práticas de QA em um app Android moderno com Jetpack Compose.
 
-## 🎯 Objetivo
 
-Validar automaticamente o comportamento da interface do app através de testes instrumentados, garantindo que os componentes visuais (Composables) sejam exibidos corretamente na tela, utilizando o padrão **Robot Pattern** para organizar as interações de forma limpa e reutilizável.
+![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
 
-## 🛠️ Tecnologias utilizadas
 
-- **Kotlin**
-- **Jetpack Compose** — construção da UI declarativa
-- **Espresso / Compose UI Testing** — automação de testes de interface
-- **JUnit4** (`AndroidJUnit4`) — runner dos testes instrumentados
-- **Robot Pattern** — abstração das interações de tela em classes dedicadas
-- **Gradle** — build e gerenciamento de dependências
 
-## 📱 Sobre o app
 
-App simples criado a partir do template *Empty Activity* do Android Studio com Jetpack Compose, exibindo uma tela principal com o texto de saudação `"Hello Android!"` através do composable `Greeting`.
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
-## 🧪 Estrutura dos testes
 
+
+
+![Espresso](https://img.shields.io/badge/Espresso-Testing-orange?style=for-the-badge)
+
+
+
+Projeto de automação de testes de UI para Android, desenvolvido como desafio da **Digital Innovation One (DIO)**.
+
+## 📌 Sobre o Projeto
+
+Automação de testes end-to-end para um aplicativo Android construído com **Jetpack Compose**, cobrindo múltiplos fluxos da aplicação. Os testes seguem o **Robot Pattern**, um padrão de organização que separa a lógica de interação com a tela da lógica de asserção, deixando os testes mais legíveis e fáceis de manter.
+
+## 🛠️ Tecnologias Utilizadas
+
+| Tecnologia | Descrição |
+|---|---|
+| **Kotlin** | Linguagem de desenvolvimento |
+| **Jetpack Compose** | Framework de UI declarativa do Android |
+| **Espresso** | Framework de testes de UI para Android |
+| **Robot Pattern** | Padrão de organização dos testes |
+
+## 🧪 Fluxos Testados
+
+- Navegação entre telas
+- Preenchimento e validação de formulários
+- Interações de UI (cliques, inputs, estados de tela)
+
+## 📁 Estrutura do Projeto
+
+## ▶️ Como Executar
+
+```bash
+# Clone o repositório
+git clone https://github.com/IdnaReis/qa-testapp-espresso-compose.git
+
+# Abra no Android Studio e execute os testes instrumentados
+./gradlew connectedAndroidTest
 ```
-app/src/androidTest/java/com/example/qatestapp/
-├── MainScreenRobot.kt   → Robot com as interações e verificações da tela principal
-└── MainScreenTest.kt    → Caso de teste que utiliza o Robot
-```
+## 📸 Evidências
 
-### Robot Pattern (`MainScreenRobot.kt`)
+Confira a pasta [`evidencias/`](./evidencias) para prints e detalhes da execução dos testes em dispositivo físico.
 
-Encapsula as interações com a tela principal, isolando os detalhes de implementação do Compose Testing das asserções do teste:
+## 👩‍💻 Autora
 
-```kotlin
-class MainScreenRobot(private val composeTestRule: AndroidComposeTestRule<*, *>) {
-    fun verifyGreetingIsDisplayed(expectedText: String) {
-        composeTestRule.onNodeWithText(expectedText).assertIsDisplayed()
-    }
-}
-```
+**Idna Reis**
+Profissional em transição para QA | Testes Manuais & Automação
 
-### Teste (`MainScreenTest.kt`)
+[
 
-```kotlin
-@RunWith(AndroidJUnit4::class)
-class MainScreenTest {
-    @get:Rule
-    val composeTestRule = createAndroidComposeRule<MainActivity>()
-    private lateinit var robot: MainScreenRobot
+![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
 
-    @Test
-    fun deveExibirSaudacaoParaAndroid() {
-        robot = MainScreenRobot(composeTestRule)
-        robot.verifyGreetingIsDisplayed("Hello Android!")
-    }
-}
-```
+](https://linkedin.com/in/idna-reis)
+[
 
-## ▶️ Como rodar os testes
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
-1. Clone o repositório:
-   ```
-   git clone https://github.com/IdnaReis/qa-testapp-espresso-compose.-.git
-   ```
-2. Abra o projeto no **Android Studio**.
-3. Conecte um dispositivo físico ou emulador Android com **Depuração USB** ativada.
-4. Clique com o botão direito na classe `MainScreenTest` → **Run 'MainScreenTest'**.
+](https://github.com/IdnaReis)
 
-## ✅ Resultado
 
-Testes executados e validados com sucesso em dispositivo físico **Samsung Galaxy A11 (Android 12)**:
 
-```
-BUILD SUCCESSFUL
-SM-A115M - 2 Tests 2/2 completed. (0 skipped) (0 failed)
-```
 
-## 📌 Aprendizados
 
-- Configuração de `AndroidComposeTestRule` para testes instrumentados com Compose.
-- Aplicação do Robot Pattern para deixar os testes mais legíveis e de fácil manutenção.
-- Diagnóstico e resolução de problemas de comunicação entre o Android Studio e o dispositivo físico via `adb`.
 
----
 
-Desenvolvido por **Idna Reis** como parte do bootcamp de QA da DIO.

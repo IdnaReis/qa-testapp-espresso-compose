@@ -1,4 +1,4 @@
-Evidências do Projeto de Testes Mobile:
+ # 📸 Evidências do Projeto de Testes Mobile
 
 - Build concluído com sucesso no Android Studio
 - Testes executados em dispositivo físico Samsung Galaxy A11

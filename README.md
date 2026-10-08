@@ -1,73 +1,63 @@
 # 📱 Automação de Testes Android — Espresso & Jetpack Compose
 
-
-
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white)
-
-
-
-
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Espresso](https://img.shields.io/badge/Espresso-Testing-FF6F00?style=for-the-badge)
 
-
-
-
-![Espresso](https://img.shields.io/badge/Espresso-Testing-orange?style=for-the-badge)
-
-
-
-Projeto de automação de testes de UI para Android, desenvolvido como desafio da **Digital Innovation One (DIO)**.
+Primeiro projeto de testes instrumentados Android, desenvolvido como desafio da **Digital Innovation One (DIO)**. O objetivo foi configurar o ambiente, escrever um teste de UI com Jetpack Compose e executá-lo em um **dispositivo físico**.
 
 ## 📌 Sobre o Projeto
 
-Automação de testes end-to-end para um aplicativo Android construído com **Jetpack Compose**, cobrindo múltiplos fluxos da aplicação. Os testes seguem o **Robot Pattern**, um padrão de organização que separa a lógica de interação com a tela da lógica de asserção, deixando os testes mais legíveis e fáceis de manter.
+App Android simples construído com Jetpack Compose, com um teste de interface que valida a exibição da mensagem de saudação na tela principal.
 
-## 🛠️ Tecnologias Utilizadas
+## 🧪 Testes Implementados
 
-| Tecnologia | Descrição |
+| Classe | Teste | O que valida |
+|---|---|---|
+| `MainScreenTest` | `deveExibirSaudacaoParaAndroid` | A saudação é exibida corretamente na tela principal |
+| `ExampleInstrumentedTest` | `useAppContext` | Teste padrão do Android Studio: confirma o contexto do app |
+
+## 🛠️ Tecnologias
+
+| Tecnologia | Uso |
 |---|---|
-| **Kotlin** | Linguagem de desenvolvimento |
-| **Jetpack Compose** | Framework de UI declarativa do Android |
-| **Espresso** | Framework de testes de UI para Android |
-| **Robot Pattern** | Padrão de organização das telas |
+| Kotlin | Linguagem do app e dos testes |
+| Jetpack Compose | Interface declarativa do Android |
+| Espresso / Compose Testing | Testes instrumentados de UI |
+| Gradle | Build e execução dos testes |
 
-## 🧪 Fluxos Testados
+## 📱 Ambiente de Execução
 
-- Navegação entre telas
-- Preenchimento e validação de formulários
-- Interações de UI (cliques, inputs, estados de tela)
-
-## 📁 Estrutura do Projeto
-
-    qa-testapp-espresso-compose/
-    ├── app/               # Código-fonte do aplicativo
-    ├── evidencias/        # Prints e evidências de execução dos testes
-    ├── gradle/            # Configurações do Gradle Wrapper
-    └── build.gradle.kts   # Configurações de build
+- **Dispositivo:** Samsung Galaxy A11 (SM-A115M), Android 12
+- **Relatório:** gerado automaticamente pelo Gradle
 
 ## ▶️ Como Executar
 
 ```bash
-# Clone o repositório
 git clone https://github.com/IdnaReis/qa-testapp-espresso-compose.git
-
-# Abra no Android Studio e execute os testes instrumentados
+# Abra no Android Studio, conecte um dispositivo e rode:
 ./gradlew connectedAndroidTest
 ```
+
 ## 📸 Evidências
 
-Confira a pasta [`evidencias/`](./evidencias) para prints e detalhes da execução dos testes em dispositivo físico.
+**Resumo da execução: 2 testes, 0 falhas, 100% de sucesso**
+
+![Resumo dos testes](evidencias/relatorio-sucesso-100.png)
+
+**Teste da tela principal (MainScreenTest)**
+
+![MainScreenTest](evidencias/relatorio-mainscreentest.png)
+
+## 🚀 Próximos Passos
+
+- Adicionar testes de navegação e interação com componentes
+- Organizar os testes com Robot Pattern
 
 ## 👩‍💻 Autora
 
-**Idna Reis**  
-Profissional em transição para QA | Testes Manuais & Automação
+**Idna Reis**
+QA | Analista de Qualidade | Automação de Testes
 
-<a href="https://linkedin.com/in/idna-reis"><img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-<a href="https://github.com/IdnaReis"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"></a>
-
-
-
-
-
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/idna-reis)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/IdnaReis)
